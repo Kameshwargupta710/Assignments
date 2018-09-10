@@ -1,0 +1,25 @@
+<div>
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+    <br/>
+    <h3 class="panel-title">Add Movie </h3>
+  </div> 
+  <div class="panel-body">
+  <table border="2">
+    <tr>
+      <th (click)="sortId()">Id</th>
+      <th (click)="sortName()">Name</th>
+      <th (click)="sortSalary()">Salary</th>
+      <th (click)="sortDep()">Department</th>
+    </tr>
+    <tr *ngFor="let empp of Employee">
+      <td>{{empp.empId}}</td>
+      <td>{{empp.empName}}</td>
+      <td>{{empp.empSalary}}</td>
+      <td>{{empp.empDep}}</td>
+    </tr>
+  </table>
+  {{deletemessage}}
+</div>
+  </div>
+</div>

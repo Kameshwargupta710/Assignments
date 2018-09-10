@@ -1,0 +1,83 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Angular 2 Operation</h3>
+  </div> 
+  <div class="panel-body">
+    <div class="form-group">
+      <label>ID</label>
+      <input #id [(ngModel)]="listFilterId" name="Id" type="number" class="form-control" pattern="[0-9]" title="Only numbers are allowed" required>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input #name type="text" [(ngModel)]="listFilterName" name="Name" class="form-control" pattern="[a-zA-Z]" title="Only characters are allowed" required>
+    </div>
+    <div class="form-group">
+      <label>Salary</label>
+      <input #salary [(ngModel)]="listFilterSalary" name="Salary" type="number" class="form-control" pattern="[0-9]" title="Only numbers are allowed" required>
+    </div>
+    <div class="form-group">
+      <label>Department</label>
+      <input #department [(ngModel)]="listFilterDepartment" name="Department" type="text" class="form-control" pattern="[a-zA-Z]" title="Only characters are allowed" required>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <button type="button"  class="btn btn-primary" (click)="addemployee(id.value,name.value,salary.value,department.value)">Add Employee</button>
+  </div>
+   {{message}}
+</div>
+<br>
+
+<h2>Show All Employee</h2>
+<div>
+  <table border="2">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Department</th>
+      <th colspan="2" style="text-align:center">Action</th>
+    </tr>
+    <tr *ngFor="let empp of Employee">
+      <td>{{empp.empId}}</td>
+      <td>{{empp.empName}}</td>
+      <td>{{empp.empSalary}}</td>
+      <td>{{empp.empDep}}</td>
+      <td><button (click)="update(empp.empId)">UPDATE</button></td>
+      <td><button (click)="delete(empp.empId)">DELETE</button></td>
+    </tr>
+  </table>
+  {{deletemessage}}
+</div>
+<br>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Update Employee Information</h3>
+  </div> 
+  <div class="panel-body">
+    <div class="form-group">
+      <label>ID</label>
+      <input #id1 [value]="updId" type="number" class="form-control" pattern="[0-9]" title="Only numbers are allowed" required>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input #name1 [value]="updName" type="text" class="form-control" pattern="[a-zA-Z]" title="Only characters are allowed" required>
+    </div>
+    <div class="form-group">
+      <label>Salary</label>
+      <input #salary1 [value]="updSalary" type="number" class="form-control" pattern="[0-9]" title="Only numbers are allowed" required>
+    </div>
+    <div class="form-group">
+      <label>Department</label>
+      <input #department1 [value]="updDep" type="text" class="form-control" pattern="[a-zA-Z]" title="Only characters are allowed" required>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <button type="button"  class="btn btn-primary" (click)="updateemployee(id1.value,name1.value,salary1.value,department1.value)">Update Employee</button>
+  </div>
+  {{updatemessage}}
+</div>
+  
+
+
+
+
